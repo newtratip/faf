@@ -32,6 +32,7 @@
   target: oca $ODOO_VERSION
   merges:
     - oca $ODOO_VERSION
+    - oca refs/pull/458/head # Fix report_xlsx : safe_eval object time
 
 ./server-ux:
   defaults:
