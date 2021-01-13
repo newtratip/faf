@@ -32,7 +32,6 @@
   target: oca $ODOO_VERSION
   merges:
     - oca $ODOO_VERSION
-    - oca refs/pull/458/head # Fix report_xlsx : safe_eval object time
 
 ./server-ux:
   defaults:
@@ -74,3 +73,12 @@
   merges:
     - oca $ODOO_VERSION
     - oca refs/pull/1383/head # sale_order_type
+
+./project:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    oca: https://github.com/OCA/project.git
+  target: oca $ODOO_VERSION
+  merges:
+    - oca $ODOO_VERSION

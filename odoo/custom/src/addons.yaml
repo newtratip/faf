@@ -20,3 +20,5 @@ purchase-workflow:
   - purchase_tier_validation # Task T1253
 sale-workflow:
   - sale_order_type # Task T1246
+project:
+  - project_list
