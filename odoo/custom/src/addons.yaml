@@ -6,6 +6,7 @@ reporting-engine:
   - report_xlsx_helper
 server-ux:
   - date_range
+  - base_tier_validation # Task T1253
 l10n-thailand:
   - l10n_th_tax_invoice
   - l10n_th_partner
@@ -15,3 +16,7 @@ l10n-thailand:
   - l10n_th_withholding_tax_cert_form # https://github.com/OCA/l10n-thailand/pull/192
   - l10n_th_withholding_tax_report # https://github.com/OCA/l10n-thailand/pull/214
   - l10n_th_amount_to_text
+purchase-workflow:
+  - purchase_tier_validation # Task T1253
+sale-workflow:
+  - sale_order_type # Task T1246

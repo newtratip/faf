@@ -54,3 +54,22 @@
     - oca refs/pull/206/head # l10n_th_withholding_tax_cert
     - oca refs/pull/192/head # l10n_th_withholding_tax_cert_form
     - oca refs/pull/214/head # l10n_th_withholding_tax_report
+
+./purchase-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    oca: https://github.com/OCA/purchase-workflow.git
+  target: oca $ODOO_VERSION
+  merges:
+    - oca $ODOO_VERSION
+
+./sale-workflow:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    oca: https://github.com/OCA/sale-workflow.git
+  target: oca $ODOO_VERSION
+  merges:
+    - oca $ODOO_VERSION
+    - oca refs/pull/1383/head # sale_order_type
