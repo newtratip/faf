@@ -1,0 +1,14 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <template
+        id="report_saleorder_document"
+        inherit_id="sale.report_saleorder_document"
+    >
+        <xpath expr="//div[@t-if='doc.user_id.name']" position="attributes">
+            <attribute name="t-if">doc.salesperson_id.name</attribute>
+        </xpath>
+        <xpath expr="//p[@t-field='doc.user_id']" position="attributes">
+            <attribute name="t-field">doc.salesperson_id</attribute>
+        </xpath>
+    </template>
+</odoo>
