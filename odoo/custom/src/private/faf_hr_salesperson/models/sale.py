@@ -13,6 +13,7 @@ class SaleOrder(models.Model):
     salesperson_id = fields.Many2one(
         comodel_name="hr.employee",
         domain=lambda self: self._get_domain_salesperson_id(),
+        ondelete="restrict",
         index=True,
     )
 
@@ -57,6 +58,7 @@ class SaleOrderLine(models.Model):
     salesperson_id = fields.Many2one(
         related="order_id.salesperson_id",
         string="Salesperson",
+        ondelete="restrict",
         store=True,
         readonly=True,
         index=True,
