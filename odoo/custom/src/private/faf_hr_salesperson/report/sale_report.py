@@ -18,7 +18,9 @@ class SaleReport(models.Model):
     )
 
     @api.model
-    def _query(self, with_clause="", fields={}, groupby="", from_clause=""):
+    def _query(self, with_clause="", fields=None, groupby="", from_clause=""):
+        if fields is None:
+            fields = {}
         fields["salesperson_id"] = ", s.salesperson_id as salesperson_id"
         groupby += ", s.salesperson_id"
         return super()._query(
