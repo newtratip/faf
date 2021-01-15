@@ -1,7 +1,7 @@
 # Copyright 2021 Ecosoft Co., Ltd. (http://ecosoft.co.th)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class SaleOrder(models.Model):
@@ -29,3 +29,17 @@ class SaleOrder(models.Model):
     customs_clearlance = fields.Char(
         string="Customs Clearlance",
     )
+    company_bank_id = fields.Many2one(
+        comodel_name="res.partner.bank",
+        string="Company Bank Account",
+        default=lambda self: self._get_default_company_bank_id(),
+        ondelete="restrict",
+        index=True,
+    )
+
+    @api.model
+    def _get_default_company_bank_id(self):
+        company_bank_id = (
+            self.env["ir.config_parameter"].sudo().get_param("sale.company_bank_id")
+        )
+        return int(company_bank_id)

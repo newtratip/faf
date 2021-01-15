@@ -33,6 +33,7 @@ This module enhance sale module as below
   * Last Day of Packing
   * Port to Port Transit Time
   * Customs Clearlance
+  * Company Bank Account
 
 **Table of contents**
 
@@ -54,6 +55,7 @@ Changelog
   * Last Day of Packing
   * Port to Port Transit Time
   * Customs Clearlance
+  * Company Bank Account
 
 Bug Tracker
 ===========

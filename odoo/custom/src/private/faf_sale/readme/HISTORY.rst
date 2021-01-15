@@ -10,3 +10,4 @@
   * Last Day of Packing
   * Port to Port Transit Time
   * Customs Clearlance
+  * Company Bank Account
