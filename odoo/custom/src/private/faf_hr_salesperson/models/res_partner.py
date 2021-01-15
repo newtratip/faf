@@ -13,6 +13,7 @@ class ResPartner(models.Model):
     salesperson_id = fields.Many2one(
         comodel_name="hr.employee",
         domain=lambda self: self._get_domain_salesperson_id(),
+        ondelete="restrict",
         index=True,
     )
 
