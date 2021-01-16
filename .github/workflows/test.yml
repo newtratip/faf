@@ -25,4 +25,4 @@ jobs:
       - run: invoke img-pull img-build --pull
       - run: invoke git-aggregate
       - run: invoke resetdb start
-      - run: invoke install -e -p
+      - run: invoke install -m faf_install
