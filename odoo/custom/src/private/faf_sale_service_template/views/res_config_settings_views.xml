@@ -1,0 +1,38 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[@name='quotation_order_setting_container']"
+                position="inside"
+            >
+                <div class="col-12 col-lg-6 o_setting_box" id="service_configuration">
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Sale Service</span>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label
+                                    for="service_include_id"
+                                    string="Include"
+                                    class="col-lg-3 o_light_label"
+                                />
+                                <field name="service_include_id" class="oe_inline" />
+                            </div>
+                            <div class="row mt16">
+                                <label
+                                    for="service_exclude_id"
+                                    string="Exclude"
+                                    class="col-lg-3 o_light_label"
+                                />
+                                <field name="service_exclude_id" class="oe_inline" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
