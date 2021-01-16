@@ -11,6 +11,5 @@ class ResConfigSettings(models.TransientModel):
         comodel_name="res.partner.bank",
         string="Company Bank Account",
         config_parameter="sale.company_bank_id",
-        ondelete="restrict",
         index=True,
     )
