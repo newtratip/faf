@@ -34,10 +34,15 @@ class SaleOrder(models.Model):
         string="Company Bank Account",
         compute="_compute_company_bank_id",
     )
+    subject = fields.Char(
+        string="Subject",
+    )
 
     def _compute_company_bank_id(self):
+        Bank = self.env["res.partner.bank"]
         for rec in self:
             company_bank_id = (
                 self.env["ir.config_parameter"].sudo().get_param("sale.company_bank_id")
             )
-            rec.company_bank_id = int(company_bank_id) or False
+            bank = Bank.search([("id", "=", int(company_bank_id))])
+            rec.company_bank_id = bank.id

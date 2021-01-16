@@ -8,6 +8,9 @@
             <group name="order_details" position="inside">
                 <field name="company_bank_id" invisible="1" />
             </group>
+            <group name="sales_person" position="inside">
+                <field name="subject" />
+            </group>
             <notebook position="inside">
                 <page string="Move Details" name="move_details">
                     <group>
