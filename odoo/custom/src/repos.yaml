@@ -17,7 +17,7 @@
 
 ./partner-contact:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/partner-contact.git
   target: oca $ODOO_VERSION
@@ -26,7 +26,7 @@
 
 ./reporting-engine:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/reporting-engine.git
   target: oca $ODOO_VERSION
@@ -35,7 +35,7 @@
 
 ./server-ux:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/server-ux.git
   target: oca $ODOO_VERSION
@@ -44,7 +44,7 @@
 
 ./l10n-thailand:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/l10n-thailand.git
   target: oca $ODOO_VERSION
@@ -57,7 +57,7 @@
 
 ./purchase-workflow:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/purchase-workflow.git
   target: oca $ODOO_VERSION
@@ -66,7 +66,7 @@
 
 ./sale-workflow:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/sale-workflow.git
   target: oca $ODOO_VERSION
@@ -76,7 +76,7 @@
 
 ./project:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/project.git
   target: oca $ODOO_VERSION
