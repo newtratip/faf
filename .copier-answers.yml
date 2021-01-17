@@ -7,7 +7,7 @@ backup_email_from: null
 backup_email_to: null
 backup_tz: UTC
 cidr_whitelist: null
-domains_prod: null
+domains_prod: 127.0.0.1
 domains_test: null
 gitlab_url: null
 odoo_dbfilter: .*
