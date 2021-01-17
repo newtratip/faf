@@ -1,6 +1,20 @@
 version: "2.4"
 
 services:
+  odoo_proxy:
+    image: tecnativa/whitelist
+    depends_on:
+      - odoo
+    networks: &public
+      default:
+      public:
+    ports:
+      - "14899:6899"
+      - "14069:8069"
+    environment:
+      PORT: "6899 8069"
+      TARGET: odoo
+
   odoo:
     extends:
       file: common.yaml
@@ -12,6 +26,11 @@ services:
     environment:
       DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
       INITIAL_LANG: "en_US"
+    volumes:
+      - ./odoo/custom/conf.d:/opt/odoo/custom/conf.d:ro,z
+      - ./odoo/custom/src/private:/opt/odoo/custom/src/private:ro,z
+      - ./odoo/custom/src/addons.yaml:/opt/odoo/custom/src/addons.yaml:ro,z
+      - ./odoo/custom/src/repos.yaml:/opt/odoo/custom/src/repos.yaml:ro,z
     depends_on:
       - db
     networks:
@@ -31,6 +50,7 @@ networks:
   default:
     driver_opts:
       encrypted: 1
+  public:
 
 volumes:
   filestore:
