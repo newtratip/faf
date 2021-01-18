@@ -1,0 +1,14 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <record id="action_report_quotation" model="ir.actions.report">
+        <field name="name">FAF Quotation</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">faf_forms.report_quotation</field>
+        <field name="report_file">faf_forms.report_quotation</field>
+        <field name="print_report_name">object.display_name</field>
+        <field name="binding_model_id" ref="sale.model_sale_order" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="faf_forms.paperformat_quotation" />
+    </record>
+</odoo>
