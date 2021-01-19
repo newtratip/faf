@@ -11,6 +11,19 @@
                     options="{'no_create_edit': True, 'no_open': True}"
                 />
             </group>
+            <notebook position="inside">
+                <page
+                    string="Service Include &amp; Exclude"
+                    name="service_include_exclude"
+                >
+                    <group string="Service Include">
+                        <field name="service_include_description" nolabel="1" />
+                    </group>
+                    <group string="Service Exclude">
+                        <field name="service_exclude_description" nolabel="1" />
+                    </group>
+                </page>
+            </notebook>
         </field>
     </record>
 </odoo>
