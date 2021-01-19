@@ -10,6 +10,8 @@
     "website": "http://ecosoft.co.th",
     "author": "Tharathip C., Ecosoft",
     "depends": [
+        # Odoo Modules
+        "sale_management",
         # OCA Modules
         "l10n_th_tax_invoice",
         "l10n_th_tax_report",  # Still in PR
