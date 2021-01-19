@@ -11,7 +11,6 @@
     "depends": ["sale"],
     "data": [
         "security/ir.model.access.csv",
-        "views/res_config_settings_views.xml",
         "views/sale_views.xml",
         "views/sale_service_template_views.xml",
     ],

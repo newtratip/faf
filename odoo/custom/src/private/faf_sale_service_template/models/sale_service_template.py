@@ -9,11 +9,6 @@ class SaleServiceTemplate(models.Model):
     _description = "Sale Service Template"
 
     name = fields.Char(required=True)
-    description = fields.Html()
     active = fields.Boolean(default=True)
-    type = fields.Selection(
-        selection=[
-            ("include", "Service Include"),
-            ("exclude", "Service Exclude"),
-        ]
-    )
+    service_include_description = fields.Html()
+    service_exclude_description = fields.Html()
