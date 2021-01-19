@@ -412,7 +412,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12" t-field="doc.service_include_id.description" />
+                    <div
+                        class="col-12"
+                        t-field="doc.service_template_id.service_include_description"
+                    />
                 </div>
             </div>
             <!-- Service Exclude -->
@@ -423,7 +426,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12" t-field="doc.service_exclude_id.description" />
+                    <div
+                        class="col-12"
+                        t-field="doc.service_template_id.service_exclude_description"
+                    />
                 </div>
             </div>
             <!-- Payment Detail -->

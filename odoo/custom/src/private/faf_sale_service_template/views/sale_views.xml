@@ -5,9 +5,11 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <group name="order_details" position="inside">
-                <field name="service_include_id" invisible="1" />
-                <field name="service_exclude_id" invisible="1" />
+            <group name="partner_details" position="inside">
+                <field
+                    name="service_template_id"
+                    options="{'no_create_edit': True, 'no_open': True}"
+                />
             </group>
         </field>
     </record>

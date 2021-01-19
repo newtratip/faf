@@ -22,7 +22,7 @@ FAF - Sale Service Template
 
 |badge1| |badge2| |badge3| |badge4|
 
-This module add sale service template for use in something on the sale order such as show on quotation form.
+This module add sale service template for sale order.
 
 **Table of contents**
 
@@ -33,13 +33,21 @@ Usage
 =====
 
 * Create sale service template (Go to Sales > Configuration > Sales Orders > Sale Service Template)
-* Select sale service include and exclude on the Quotations & Orders section (Go to Sales > Configuration > Settings)
-* We can use sale service include and exclude on the sale order
-
-  * example how to call ? > obj.service_include_id, obj.service_exclude_id (obj = sale.order)
+* Select Service Template on the sale order
 
 Changelog
 =========
+
+14.0.1.0.0 (2021-01-19)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Remove service_include_id (sale.order)
+* Remove service_exclude_id (sale.order)
+* Remove type (sale.service.template)
+* Remove description (sale.service.template)
+* Add service_template_id (sale.order)
+* Add service_include_description (sale.service.template)
+* Add service_exclude_description (sale.service.template)
 
 14.0.1.0.0 (2021-01-15)
 ~~~~~~~~~~~~~~~~~~~~~~~
