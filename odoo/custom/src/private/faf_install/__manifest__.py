@@ -12,15 +12,16 @@
     "depends": [
         # OCA Modules
         "l10n_th_tax_invoice",
-        # "l10n_th_tax_report",
+        "l10n_th_tax_report",  # Still in PR
         "l10n_th_withholding_tax",
-        # "l10n_th_withholding_tax_cert",
-        # "l10n_th_withholding_tax_cert_form",
-        # "l10n_th_withholding_tax_report",
+        "l10n_th_withholding_tax_cert",  # Still in PR
+        "l10n_th_withholding_tax_cert_form",  # Still in PR
+        "l10n_th_withholding_tax_report",  # Still in PR
         # FAF Modules
         "faf_hr_salesperson",
         "faf_sale",
         "faf_sale_service_template",
+        "faf_forms",
     ],
     "license": "AGPL-3",
     "installable": True,
