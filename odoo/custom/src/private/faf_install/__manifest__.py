@@ -13,6 +13,7 @@
         # Odoo Modules
         "sale_management",
         "account_accountant",
+        "purchase",
         # OCA Modules
         "l10n_th_tax_invoice",
         "l10n_th_tax_report",  # Still in PR
