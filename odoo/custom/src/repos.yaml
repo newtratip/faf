@@ -82,3 +82,4 @@
   target: oca $ODOO_VERSION
   merges:
     - oca $ODOO_VERSION
+    - oca refs/pull/749/head # project_status
