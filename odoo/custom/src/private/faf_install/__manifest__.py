@@ -22,6 +22,8 @@
         "l10n_th_withholding_tax_cert_form",  # Still in PR
         "l10n_th_withholding_tax_report",  # Still in PR
         "project_list",
+        "project_status",
+        "project_deadline",
         # FAF Modules
         "faf_hr_salesperson",
         "faf_sale",
