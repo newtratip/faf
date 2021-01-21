@@ -1,0 +1,16 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <template
+        id="report_assets_common"
+        inherit_id="web.report_assets_common"
+        name="Report common assets"
+    >
+        <xpath expr="link[last()]" position="after">
+            <link
+                rel="stylesheet"
+                type="text/scss"
+                href="/faf_forms/static/src/scss/quotation_form.scss"
+            />
+        </xpath>
+    </template>
+</odoo>

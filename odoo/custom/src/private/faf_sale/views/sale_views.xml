@@ -1,0 +1,33 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <group name="order_details" position="inside">
+                <field name="company_bank_id" invisible="1" />
+            </group>
+            <group name="sales_person" position="inside">
+                <field name="subject" />
+            </group>
+            <notebook position="inside">
+                <page string="Move Details" name="move_details">
+                    <group>
+                        <group>
+                            <field name="relocation" />
+                            <field name="mode_shipment" />
+                            <field name="not_exceeding_estimated_volume" />
+                        </group>
+                        <group>
+                            <field name="first_day_packing" />
+                            <field name="last_day_packing" />
+                            <field name="transit_time" />
+                            <field name="customs_clearlance" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
