@@ -12,7 +12,7 @@
     "depends": [
         # Odoo Modules
         "sale_management",
-        "account_accountant",
+        # "account_accountant",
         "purchase",
         # OCA Modules
         "l10n_th_tax_invoice",
