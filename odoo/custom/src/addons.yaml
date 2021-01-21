@@ -23,3 +23,9 @@ sale-workflow:
 project:
   - project_list
   - project_status
+---
+ONLY:
+  PGDATABASE:
+    - prod
+enterprice-14.0:
+  - "*"
