@@ -76,7 +76,7 @@
 
 ./project:
   defaults:
-    depth: $DEPTH_DEFAULT
+    depth: $DEPTH_MERGE
   remotes:
     oca: https://github.com/OCA/project.git
   target: oca $ODOO_VERSION
