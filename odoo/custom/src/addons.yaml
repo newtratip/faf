@@ -22,3 +22,4 @@ sale-workflow:
   - sale_order_type # Task T1246
 project:
   - project_list
+  - project_status
