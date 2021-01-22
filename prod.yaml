@@ -16,13 +16,13 @@ services:
       DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
       INITIAL_LANG: "en_US"
     volumes:
-      - ./odoo/custom:/opt/odoo/custom:ro,z
+      - ./odoo/custom:/opt/odoo/custom:rw,z
       - ./odoo/auto:/opt/odoo/auto:rw,z
+      - /opt/odoo/custom/src/odoo:rw,z
     depends_on:
       - db
     networks:
       default:
-      globalwhitelist_shared:
     labels:
       doodba.domain.main: ""
 
@@ -38,9 +38,6 @@ networks:
   default:
     driver_opts:
       encrypted: 1
-
-  globalwhitelist_shared:
-    external: true
 
 volumes:
   filestore:
