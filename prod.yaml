@@ -7,8 +7,8 @@ services:
       service: odoo
     restart: unless-stopped
     ports:
-      - "8069:8069"
-      - "8072:8072"
+      - "14069:8069"
+      - "14072:8072"
     env_file:
       - .docker/odoo.env
       - .docker/db-access.env
