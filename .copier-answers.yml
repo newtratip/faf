@@ -7,17 +7,14 @@ backup_email_from: null
 backup_email_to: null
 backup_tz: UTC
 cidr_whitelist: null
-domains_prod:
-  - cert_resolver: false
-    hosts:
-      - 128.199.253.126
+domains_prod: []
 domains_test: null
 gitlab_url: null
 odoo_dbfilter: .*
 odoo_initial_lang: en_US
 odoo_listdb: true
 odoo_oci_image: null
-odoo_proxy: traefik
+odoo_proxy: other
 odoo_version: 14.0
 paths_without_crawlers:
   - /web

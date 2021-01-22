@@ -62,9 +62,6 @@ networks:
   globalwhitelist_shared:
     external: true
 
-  inverseproxy_shared:
-    external: true
-
 volumes:
   filestore:
   db:

@@ -6,49 +6,25 @@ services:
       file: common.yaml
       service: odoo
     restart: unless-stopped
+    ports:
+      - "8069:8069"
+      - "8072:8072"
     env_file:
       - .docker/odoo.env
       - .docker/db-access.env
     environment:
       DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
       INITIAL_LANG: "en_US"
+    volumes:
+      - ./odoo/custom:/opt/odoo/custom:ro,z
+      - ./odoo/auto:/opt/odoo/auto:rw,z
     depends_on:
       - db
     networks:
       default:
-      inverseproxy_shared:
+      globalwhitelist_shared:
     labels:
-      doodba.domain.main: "128.199.253.126"
-      traefik.enable: "true"
-      traefik.domain: "128.199.253.126"
-      traefik.forbiddenCrawlers-0.frontend.headers.customResponseHeaders:
-        "X-Robots-Tag:noindex, nofollow"
-      traefik.forbiddenCrawlers-0.frontend.rule: Host:128.199.253.126;Path:/web,/web/{anything:.*},/website/info,/website/info/{anything:.*}
-      traefik.main-0.frontend.rule: Host:128.199.253.126
-      traefik.longpolling-0.frontend.rule: Host:128.199.253.126;Path:/longpolling/{anything:.*}
-      traefik.longpolling-0.port: 8072
-      traefik.http.middlewares.faf-14-0-prod-buffering.buffering.retryExpression:
-        IsNetworkError() && Attempts() < 5
-      traefik.http.middlewares.faf-14-0-prod-compress.compress: "true"
-      ? traefik.http.middlewares.faf-14-0-prod-forbid-crawlers.headers.customResponseHeaders.X-Robots-Tag
-      : "noindex, nofollow"
-      traefik.http.middlewares.faf-14-0-prod-forceSecure.headers.forceSTSHeader: "true"
-      traefik.http.middlewares.faf-14-0-prod-forceSecure.headers.sslRedirect: "true"
-      traefik.http.services.faf-14-0-prod-main.loadbalancer.server.port: 8069
-      traefik.http.services.faf-14-0-prod-longpolling.loadbalancer.server.port: 8072
-      traefik.http.routers.faf-14-0-prod-main-0.rule: Host(`128.199.253.126`)
-      traefik.http.routers.faf-14-0-prod-main-0.service: faf-14-0-prod-main
-      traefik.http.routers.faf-14-0-prod-main-0.middlewares:
-        faf-14-0-prod-buffering, faf-14-0-prod-compress
-      traefik.http.routers.faf-14-0-prod-longpolling-0.rule:
-        Host(`128.199.253.126`) && PathPrefix(`/longpolling/`)
-      traefik.http.routers.faf-14-0-prod-longpolling-0.service: faf-14-0-prod-longpolling
-      traefik.http.routers.faf-14-0-prod-forbiddenCrawlers-0.rule:
-        Host(`128.199.253.126`) && (PathPrefix(`/web/`, `/website/info/`) ||
-        Path(`/web`, `/website/info`))
-      traefik.http.routers.faf-14-0-prod-forbiddenCrawlers-0.service: faf-14-0-prod-main
-      traefik.http.routers.faf-14-0-prod-forbiddenCrawlers-0.middlewares:
-        faf-14-0-prod-buffering, faf-14-0-prod-compress, faf-14-0-prod-forbid-crawlers
+      doodba.domain.main: ""
 
   db:
     extends:
@@ -63,7 +39,7 @@ networks:
     driver_opts:
       encrypted: 1
 
-  inverseproxy_shared:
+  globalwhitelist_shared:
     external: true
 
 volumes:
