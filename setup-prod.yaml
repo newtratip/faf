@@ -1,0 +1,33 @@
+version: "2.4"
+
+services:
+  odoo:
+    build:
+      context: ./odoo
+      args:
+        AGGREGATE: "false"
+        DEPTH_DEFAULT: 100
+        ODOO_VERSION: "14.0"
+        PYTHONOPTIMIZE: ""
+        PIP_INSTALL_ODOO: "false"
+        CLEAN: "false"
+        COMPILE: "false"
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    networks:
+      - default
+    volumes:
+      - ./odoo/custom/src:/opt/odoo/custom/src:rw,z
+    environment:
+      DEPTH_DEFAULT: 100
+      # XXX Export these variables before running setup to own the files
+      UID: "${UID:-1000}"
+      GID: "${GID:-1000}"
+      UMASK: "$UMASK"
+    user: root
+    entrypoint: autoaggregate
+
+networks:
+  default:
+    driver_opts:
+      encrypted: 1

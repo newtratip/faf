@@ -18,7 +18,7 @@ services:
     volumes:
       - ./odoo/custom:/opt/odoo/custom:rw,z
       - ./odoo/auto:/opt/odoo/auto:rw,z
-      - /opt/odoo/custom/src/odoo:rw,z
+      - /opt/odoo/custom/src/odoo
     depends_on:
       - db
     networks:
