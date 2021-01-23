@@ -15,7 +15,8 @@
                 <page string="Move Details" name="move_details">
                     <group>
                         <group>
-                            <field name="relocation" />
+                            <field name="relocation_from" />
+                            <field name="relocation_to" />
                             <field name="mode_shipment" />
                             <field name="not_exceeding_estimated_volume" />
                         </group>

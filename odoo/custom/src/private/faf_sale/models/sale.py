@@ -8,8 +8,11 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     # New fields
-    relocation = fields.Text(
-        string="Relocation",
+    relocation_from = fields.Char(
+        string="Relocation From",
+    )
+    relocation_to = fields.Char(
+        string="Relocation To",
     )
     mode_shipment = fields.Text(
         string="Mode of Shipment",

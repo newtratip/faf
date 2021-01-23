@@ -2,7 +2,8 @@ This module enhance sale module as below
 
 * Add New Field
 
-  * Relocation
+  * Relocation From
+  * Relocation To
   * Mode of Shipment
   * Not exceeding the estimated volume of
   * First Day of Packing
