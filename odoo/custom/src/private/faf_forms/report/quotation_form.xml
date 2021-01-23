@@ -103,10 +103,12 @@
                 </div>
                 <div class="row">
                     <div class="col-3 text-right gray-border">
-                        Relocation
+                        Relocation From <br />
+                        Relocation To
                     </div>
                     <div class="col-9 gray-border">
-                        <span t-field="doc.relocation" />
+                        <span t-field="doc.relocation_from" /><br />
+                        <span t-field="doc.relocation_to" />
                     </div>
                 </div>
                 <div class="row">

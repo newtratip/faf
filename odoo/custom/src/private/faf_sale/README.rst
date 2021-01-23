@@ -26,7 +26,8 @@ This module enhance sale module as below
 
 * Add New Field
 
-  * Relocation
+  * Relocation From
+  * Relocation To
   * Mode of Shipment
   * Not exceeding the estimated volume of
   * First Day of Packing
@@ -42,6 +43,11 @@ This module enhance sale module as below
 
 Changelog
 =========
+
+14.0.1.0.0 (2021-01-23)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Split Relocation is 2 fields (Relocation From, Relocation To)
 
 14.0.1.0.0 (2021-01-15)
 ~~~~~~~~~~~~~~~~~~~~~~~
