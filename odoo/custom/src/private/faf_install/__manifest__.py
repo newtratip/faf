@@ -24,6 +24,7 @@
         "project_list",
         "project_status",
         "project_deadline",
+        "sale_order_type",
         # FAF Modules
         "faf_hr_salesperson",
         "faf_sale",
