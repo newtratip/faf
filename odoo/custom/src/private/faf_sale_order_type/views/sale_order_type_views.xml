@@ -1,0 +1,18 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <record id="sot_sale_order_type_form_view" model="ir.ui.view">
+        <field name="name">sale.order.type.form.view</field>
+        <field name="model">sale.order.type</field>
+        <field name="inherit_id" ref="sale_order_type.sot_sale_order_type_form_view" />
+        <field name="arch" type="xml">
+            <field name="incoterm_id" position="after">
+                <field
+                    name="sale_order_template_id"
+                    options="{'no_create': True, 'no_open': True}"
+                    required="True"
+                    groups="sale_management.group_sale_order_template"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
