@@ -34,7 +34,6 @@ This module enhance sale module as below
   * Last Day of Packing
   * Port to Port Transit Time
   * Customs Clearlance
-  * Company Bank Account
 
 **Table of contents**
 
@@ -43,6 +42,11 @@ This module enhance sale module as below
 
 Changelog
 =========
+
+14.0.1.0.0 (2021-01-25)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Remove Company Bank Account
 
 14.0.1.0.0 (2021-01-23)
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,7 +1,7 @@
 <odoo>
     <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
-    <record id="paperformat_quotation" model="report.paperformat">
-        <field name="name">Quotation A4</field>
+    <record id="faf_paperformat_a4" model="report.paperformat">
+        <field name="name">FAF A4</field>
         <field name="default" eval="True" />
         <field name="format">A4</field>
         <field name="page_height">0</field>

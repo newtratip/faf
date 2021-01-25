@@ -9,7 +9,7 @@
             <link
                 rel="stylesheet"
                 type="text/scss"
-                href="/faf_forms/static/src/scss/quotation_form.scss"
+                href="/faf_forms/static/src/scss/report.scss"
             />
         </xpath>
     </template>

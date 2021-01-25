@@ -1,8 +1,8 @@
 <odoo>
     <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
-    <template id="report_quotation_document">
+    <template id="report_invoice_document">
         <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
-        <div class="article faf_quotation">
+        <div class="article faf_invoice">
             <div class="row">
                 <div class="col-12">
                     <t t-set="company" t-value="doc.company_id" />
@@ -16,49 +16,37 @@
             </div>
             <div class="row">
                 <div class="col-12 text-right title">
-                    <strong style="font-size: 30px;">Quotation</strong>
+                    <strong style="font-size: 30px;">INVOICE</strong>
                 </div>
             </div>
             <!-- Customer Details -->
             <div style="page-break-inside: avoid;">
                 <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
-                        No.:
-                    </div>
-                    <div class="col-9 detail white-border no-right-border">
-                        <span t-field="doc.name" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
-                        Subject:
-                    </div>
-                    <div class="col-9 detail white-border no-right-border">
-                        <span t-field="doc.subject" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
-                        Sale Consultant
-                    </div>
-                    <div class="col-9 detail white-border no-right-border">
-                        <span t-field="doc.salesperson_id.name" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
-                        Date:
-                    </div>
+                    <div
+                        class="col-3 detail white-border no-left-border no-right-border no-bottom-border"
+                    />
                     <div class="col-9">
                         <div class="row">
-                            <div class="col-6 detail white-border">
-                                <span
-                                    t-field="doc.date_order"
-                                    t-options='{"widget": "date"}'
-                                />
-                            </div>
+                            <div
+                                class="col-6 detail white-border no-left-border no-bottom-border"
+                            />
                             <div class="col-6 detail white-border no-right-border">
-                                Expiration Date: <span t-field="doc.validity_date" />
+                                No.: <span t-field="doc.name" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div
+                        class="col-3 detail white-border no-left-border no-right-border no-top-border"
+                    />
+                    <div class="col-9">
+                        <div class="row">
+                            <div
+                                class="col-6 detail white-border no-left-border no-top-border"
+                            />
+                            <div class="col-6 detail white-border no-right-border">
+                                Date: <span t-field="doc.invoice_date" />
                             </div>
                         </div>
                     </div>
@@ -85,88 +73,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
-                        Tax ID:
-                    </div>
-                    <div class="col-9 detail white-border no-right-border">
-                        <span t-field="doc.partner_id.vat" />
-                    </div>
-                </div>
             </div>
-            <!-- Move Details -->
-            <div style="page-break-inside: avoid;margin-top: 30px;">
-                <div class="row">
-                    <div class="col-12 title">
-                        <strong>Move Details</strong>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Relocation From<br />
-                        Relocation To
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.relocation_from" /><br />
-                        <span t-field="doc.relocation_to" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Mode of Shipment
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.mode_shipment" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Not exceeding the estimated volume of
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.not_exceeding_estimated_volume" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        First Day of Packing
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.first_day_packing" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Last Day of Packing
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.last_day_packing" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Port to Port Transit Time
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.transit_time" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 text-right gray-border">
-                        Customs clearlance
-                    </div>
-                    <div class="col-9 gray-border">
-                        <span t-field="doc.customs_clearlance" />
-                    </div>
-                </div>
-            </div>
-            <!-- Move Cost -->
+            <!-- Invoice Lines -->
             <div style="margin-top: 30px;">
-                <div class="row">
-                    <div class="col-12 title">
-                        <strong>Move Cost</strong>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-12" style="padding: 0px;">
                         <table class="table table-sm table-borderless mt8">
@@ -174,12 +83,6 @@
                                 <tr>
                                     <th class="text-center no-left-border">No.</th>
                                     <th class="text-center">Description</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-center">Unit Price<br /><i
-                                            style="font-size: 14px;"
-                                        >(<span
-                                                t-field="doc.currency_id.name"
-                                            />)</i></th>
                                     <th class="text-center">Amount<br /><i
                                             style="font-size: 14px;"
                                         >NON-VAT</i></th>
@@ -200,12 +103,12 @@
                                 <t t-set="subtotal" t-value="0" />
                                 <t t-set="number" t-value="0" />
                                 <t
-                                    t-foreach="doc.order_line.sorted('sequence')"
+                                    t-foreach="doc.invoice_line_ids.sorted('sequence')"
                                     t-as="line"
                                 >
                                     <t
                                         t-set="amount"
-                                        t-value="line.product_uom_qty * line.price_unit"
+                                        t-value="line.quantity * line.price_unit"
                                     />
                                     <t
                                         t-set="current_subtotal"
@@ -228,17 +131,7 @@
                                                 <span t-field="line.name" />
                                             </td>
                                             <td class="text-right">
-                                                <span t-field="line.product_uom_qty" />
-                                                <span
-                                                    t-field="line.product_uom"
-                                                    groups="uom.group_uom"
-                                                />
-                                            </td>
-                                            <td class="text-right">
-                                                <span t-field="line.price_unit" />
-                                            </td>
-                                            <td class="text-right">
-                                                <t t-if="not line.tax_id">
+                                                <t t-if="not line.tax_ids">
                                                     <span
                                                         t-esc="'{0:,.2f}'.format(amount)"
                                                     />
@@ -253,7 +146,7 @@
                                                 </t>
                                             </td>
                                             <td class="text-right">
-                                                <t t-if="line.tax_id">
+                                                <t t-if="line.tax_ids">
                                                     <span
                                                         t-esc="'{0:,.2f}'.format(amount)"
                                                     />
@@ -296,11 +189,12 @@
                                         </t>
                                     </tr>
                                     <t
-                                        t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')"
+                                        t-if="current_section and (line_last or doc.invoice_line_ids[line_index+1].display_type == 'line_section')"
                                     >
                                         <tr>
-                                            <td class="text-right" colspan="4"><strong
-                                                >Sub Total</strong></td>
+                                            <td class="text-right" colspan="2">
+                                                <strong>Sub Total</strong>
+                                            </td>
                                             <td class="text-right">
                                                 <t t-if="current_subtotal_non_vat">
                                                     <strong
@@ -326,7 +220,7 @@
                                     </t>
                                 </t>
                                 <tr>
-                                    <td class="text-right" colspan="4">
+                                    <td class="text-right" colspan="2">
                                         <strong>Sub Total</strong>
                                     </td>
                                     <td class="text-right">
@@ -352,7 +246,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="4">
+                                    <td class="text-right" colspan="2">
                                         <strong>VAT 7%</strong>
                                     </td>
                                     <td class="text-right" />
@@ -372,8 +266,8 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="4">
-                                        <strong>Net Amount</strong>
+                                    <td class="text-right" colspan="2">
+                                        <strong>Total</strong>
                                     </td>
                                     <td class="text-right">
                                         <t t-if="subtotal_non_vat">
@@ -398,9 +292,39 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" colspan="7">
+                                    <td class="text-right" colspan="2">
+                                        <strong>WHT</strong>
+                                    </td>
+                                    <td class="text-right" />
+                                    <td class="text-right" />
+                                    <td class="text-right">
+                                        <t
+                                            t-set="amount_wt"
+                                            t-value="sum(doc.invoice_line_ids.filtered('wt_tax_id').mapped(lambda l: l.wt_tax_id.amount / 100 * (l.quantity * l.price_unit)))"
+                                        />
+                                        <t t-if="amount_wt">
+                                            (<strong
+                                                t-esc="'{:,.2f}'.format(amount_wt)"
+                                            />)
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="2">
+                                        <strong>Net Amount</strong>
+                                    </td>
+                                    <td class="text-right" />
+                                    <td class="text-right" />
+                                    <td class="text-right">
                                         <strong
-                                            t-esc="'(%s)' % doc.currency_id.amount_to_text(doc.amount_total)"
+                                            t-esc="'{:,.2f}'.format(doc.amount_total - amount_wt)"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="5">
+                                        <strong
+                                            t-esc="'(%s)' % doc.currency_id.amount_to_text(doc.amount_total - amount_wt)"
                                         />
                                     </td>
                                 </tr>
@@ -409,91 +333,67 @@
                     </div>
                 </div>
             </div>
-            <!-- Service Include -->
             <div style="page-break-inside: avoid;margin-top: 30px;">
                 <div class="row">
-                    <div class="col-12 title">
-                        <strong>SERVICE INCLUDE:</strong>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" t-field="doc.service_include_description" />
-                </div>
-            </div>
-            <!-- Service Exclude -->
-            <div style="page-break-inside: avoid;margin-top: 30px;">
-                <div class="row">
-                    <div class="col-12 title">
-                        <strong>SERVICE EXCLUDE:</strong>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" t-field="doc.service_exclude_description" />
-                </div>
-            </div>
-            <!-- Payment Detail -->
-            <div style="page-break-inside: avoid;margin-top: 30px;">
-                <div class="row">
-                    <div class="col-12 title">
-                        <strong>PAYMENT DETAIL:</strong>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        Bank Name:
-                    </div>
-                    <div class="col-9">
-                        <span t-field="company.company_bank_id.bank_id.name" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        Account Name:
-                    </div>
-                    <div class="col-9">
-                        <span t-field="company.company_bank_id.partner_id.name" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        Account Number:
-                    </div>
-                    <div class="col-9">
-                        <span t-field="company.company_bank_id.acc_number" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        Swift Code:
-                    </div>
-                    <div class="col-9">
-                        <span t-field="company.company_bank_id.bank_id.bic" />
-                    </div>
-                </div>
-            </div>
-            <!-- Signature -->
-            <div style="page-break-inside: avoid;margin-top: 30px;">
-                <div class="row">
-                    <div class="col-6 text-center">
-                        Please sign below for purchasing confirmation<br /><br />
-                        _____________________________________________<br /><br />
-                        (_____________________________________________)
+                    <!-- Payment Detail -->
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 title">
+                                <strong>PAYMENT DETAIL:</strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Bank Name:
+                            </div>
+                            <div class="col-7">
+                                <span t-field="company.company_bank_id.bank_id.name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Account Name:
+                            </div>
+                            <div class="col-7">
+                                <span
+                                    t-field="company.company_bank_id.partner_id.name"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Account Number:
+                            </div>
+                            <div class="col-7">
+                                <span t-field="company.company_bank_id.acc_number" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Swift Code:
+                            </div>
+                            <div class="col-7">
+                                <span t-field="company.company_bank_id.bank_id.bic" />
+                            </div>
+                        </div>
                     </div>
                     <div class="col-6 text-center">
-                        <span t-field="company.name" /><br /><br />
-                        _____________________________________________<br /><br />
-                        (_____________________________________________)
+                        For and on behalf of<br />
+                        <span t-field="company.name" />
+                        <br /><br />
+                        _____________________________________________<br />
+                        Authorized Signature
                     </div>
                 </div>
             </div>
         </div>
     </template>
 
-    <template id="report_quotation">
+    <template id="report_invoice">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t
-                    t-call="faf_forms.report_quotation_document"
+                    t-call="faf_forms.report_invoice_document"
                     t-lang="doc.partner_id.lang"
                 />
             </t>

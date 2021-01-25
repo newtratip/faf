@@ -10,7 +10,6 @@
     "author": "Tharathip C., Ecosoft",
     "depends": ["sale"],
     "data": [
-        "views/res_config_settings_views.xml",
         "views/sale_views.xml",
     ],
     "license": "AGPL-3",
