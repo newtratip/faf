@@ -4,12 +4,11 @@
 from odoo import fields, models
 
 
-class ResConfigSettings(models.TransientModel):
-    _inherit = "res.config.settings"
+class ResCompany(models.Model):
+    _inherit = "res.company"
 
     company_bank_id = fields.Many2one(
         comodel_name="res.partner.bank",
         string="Company Bank Account",
-        config_parameter="sale.company_bank_id",
         index=True,
     )

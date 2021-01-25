@@ -1,0 +1,68 @@
+// Quotation Form
+.faf_quotation {
+    font-size: 17px;
+    .logo {
+        max-height: 70px;
+    }
+    .title {
+        background-color: #ff6600;
+        color: #ffffff;
+    }
+    .detail {
+        background-color: #e7e6e6;
+    }
+    .no-left-border {
+        border-left: 0px !important;
+    }
+    .no-right-border {
+        border-right: 0px !important;
+    }
+    .white-border {
+        border: 1px solid #ffffff;
+    }
+    .gray-border {
+        border: 1px solid lightgray;
+    }
+    thead th {
+        background-color: #ff964f;
+        border: 1px solid #ffffff;
+        vertical-align: middle;
+        color: #ffffff;
+    }
+}
+
+// Invoice Form
+.faf_invoice {
+    font-size: 17px;
+    .logo {
+        max-height: 70px;
+    }
+    .title {
+        background-color: #ff6600;
+        color: #ffffff;
+    }
+    .detail {
+        background-color: #e7e6e6;
+    }
+    .no-left-border {
+        border-left: 0px !important;
+    }
+    .no-right-border {
+        border-right: 0px !important;
+    }
+    .no-bottom-border {
+        border-bottom: 0px !important;
+    }
+    .no-top-border {
+        border-top: 0px !important;
+    }
+    .white-border {
+        border: 1px solid #ffffff;
+    }
+    thead th {
+        background-color: #ff964f;
+        border: 1px solid #ffffff;
+        vertical-align: middle;
+        color: #ffffff;
+    }
+}

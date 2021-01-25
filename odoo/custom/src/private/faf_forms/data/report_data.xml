@@ -1,5 +1,6 @@
 <odoo>
     <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <!-- Quotation Form -->
     <record id="action_report_quotation" model="ir.actions.report">
         <field name="name">FAF Quotation</field>
         <field name="model">sale.order</field>
@@ -9,6 +10,19 @@
         <field name="print_report_name">object.display_name</field>
         <field name="binding_model_id" ref="sale.model_sale_order" />
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="faf_forms.paperformat_quotation" />
+        <field name="paperformat_id" ref="faf_forms.faf_paperformat_a4" />
+    </record>
+
+    <!-- Invoice Form -->
+    <record id="action_report_invoice" model="ir.actions.report">
+        <field name="name">FAF Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">faf_forms.report_invoice</field>
+        <field name="report_file">faf_forms.report_invoice</field>
+        <field name="print_report_name">object.display_name</field>
+        <field name="binding_model_id" ref="account.model_account_move" />
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="faf_forms.faf_paperformat_a4" />
     </record>
 </odoo>
