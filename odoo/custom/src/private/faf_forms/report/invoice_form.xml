@@ -131,7 +131,9 @@
                                                 <span t-field="line.name" />
                                             </td>
                                             <td class="text-right">
-                                                <t t-if="not line.tax_ids">
+                                                <t
+                                                    t-if="not line.tax_ids or not line.tax_ids.filtered(lambda l: l.amount)"
+                                                >
                                                     <span
                                                         t-esc="'{0:,.2f}'.format(amount)"
                                                     />
@@ -146,7 +148,9 @@
                                                 </t>
                                             </td>
                                             <td class="text-right">
-                                                <t t-if="line.tax_ids">
+                                                <t
+                                                    t-if="line.tax_ids and line.tax_ids.filtered(lambda l: l.amount)"
+                                                >
                                                     <span
                                                         t-esc="'{0:,.2f}'.format(amount)"
                                                     />
@@ -384,6 +388,28 @@
                         _____________________________________________<br />
                         Authorized Signature
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer faf_invoice">
+            <div class="row">
+                <div class="col-6">
+                    <span t-field="company.name" />
+                </div>
+                <div class="col-6" />
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <span t-field="company.partner_id.street" />
+                    <span t-field="company.partner_id.street2" />
+                    <span t-field="company.partner_id.city" />
+                    <span t-field="company.partner_id.state_id.name" />
+                    <span t-field="company.partner_id.zip" />
+                    <span t-field="company.partner_id.country_id.name" />
+                </div>
+                <div class="col-6 text-right">
+                    Tel: <span t-field="company.partner_id.phone" /><br />
+                    Email: <span t-field="company.partner_id.email" />
                 </div>
             </div>
         </div>

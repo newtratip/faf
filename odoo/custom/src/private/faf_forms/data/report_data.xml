@@ -2,7 +2,7 @@
     <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
     <!-- Quotation Form -->
     <record id="action_report_quotation" model="ir.actions.report">
-        <field name="name">FAF Quotation</field>
+        <field name="name">USP Quotation</field>
         <field name="model">sale.order</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">faf_forms.report_quotation</field>
@@ -15,7 +15,7 @@
 
     <!-- Invoice Form -->
     <record id="action_report_invoice" model="ir.actions.report">
-        <field name="name">FAF Invoice</field>
+        <field name="name">USP Invoice</field>
         <field name="model">account.move</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">faf_forms.report_invoice</field>
