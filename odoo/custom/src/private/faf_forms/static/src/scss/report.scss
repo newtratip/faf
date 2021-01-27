@@ -1,12 +1,19 @@
+// Add font
+@font-face {
+    font-family: "Calibril";
+    src: url("../fonts/calibril.ttf") format("truetype");
+}
 // Quotation Form
 .faf_quotation {
-    font-size: 17px;
+    font-family: Calibril;
+    font-size: 11pt;
     .logo {
         max-height: 70px;
     }
     .title {
         background-color: #ff6600;
         color: #ffffff;
+        font-size: 12pt;
     }
     .detail {
         background-color: #e7e6e6;
@@ -33,13 +40,15 @@
 
 // Invoice Form
 .faf_invoice {
-    font-size: 17px;
+    font-family: Calibril;
+    font-size: 11pt;
     .logo {
         max-height: 70px;
     }
     .title {
         background-color: #ff6600;
         color: #ffffff;
+        font-size: 12pt;
     }
     .detail {
         background-color: #e7e6e6;

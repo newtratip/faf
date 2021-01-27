@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-right title">
-                    <strong style="font-size: 30px;">INVOICE</strong>
+                    <strong style="font-size: 22pt;">INVOICE</strong>
                 </div>
             </div>
             <!-- Customer Details -->
@@ -81,16 +81,25 @@
                         <table class="table table-sm table-borderless mt8">
                             <thead>
                                 <tr>
-                                    <th class="text-center no-left-border">No.</th>
-                                    <th class="text-center">Description</th>
-                                    <th class="text-center">Amount<br /><i
-                                            style="font-size: 14px;"
-                                        >NON-VAT</i></th>
-                                    <th class="text-center">Amount<br /><i
-                                            style="font-size: 14px;"
-                                        >VAT</i></th>
+                                    <th
+                                        class="text-center no-left-border"
+                                        style="width: 5%;"
+                                    >No.</th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 59%;"
+                                    >Description</th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Amount<br /><i>NON-VAT</i></th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Amount<br /><i>VAT</i></th>
                                     <th
                                         class="text-center no-right-border"
+                                        style="width: 12%;"
                                     >Total Amount</th>
                                 </tr>
                             </thead>
@@ -394,12 +403,7 @@
         <div class="footer faf_invoice">
             <div class="row">
                 <div class="col-6">
-                    <span t-field="company.name" />
-                </div>
-                <div class="col-6" />
-            </div>
-            <div class="row">
-                <div class="col-6">
+                    <span t-field="company.name" /><br />
                     <span t-field="company.partner_id.street" />
                     <span t-field="company.partner_id.street2" />
                     <span t-field="company.partner_id.city" />
