@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-right title">
-                    <strong style="font-size: 30px;">Quotation</strong>
+                    <strong style="font-size: 22pt;">Quotation</strong>
                 </div>
             </div>
             <!-- Customer Details -->
@@ -172,22 +172,35 @@
                         <table class="table table-sm table-borderless mt8">
                             <thead>
                                 <tr>
-                                    <th class="text-center no-left-border">No.</th>
-                                    <th class="text-center">Description</th>
-                                    <th class="text-center">Quantity</th>
-                                    <th class="text-center">Unit Price<br /><i
-                                            style="font-size: 14px;"
-                                        >(<span
+                                    <th
+                                        class="text-center no-left-border"
+                                        style="width: 5%;"
+                                    >No.</th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 35%;"
+                                    >Description</th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Quantity</th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Unit Price<br /><i>(<span
                                                 t-field="doc.currency_id.name"
                                             />)</i></th>
-                                    <th class="text-center">Amount<br /><i
-                                            style="font-size: 14px;"
-                                        >NON-VAT</i></th>
-                                    <th class="text-center">Amount<br /><i
-                                            style="font-size: 14px;"
-                                        >VAT</i></th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Amount<br /><i>NON-VAT</i></th>
+                                    <th
+                                        class="text-center"
+                                        style="width: 12%;"
+                                    >Amount<br /><i>VAT</i></th>
                                     <th
                                         class="text-center no-right-border"
+                                        style="width: 12%;"
                                     >Total Amount</th>
                                 </tr>
                             </thead>
@@ -228,7 +241,14 @@
                                                 <span t-field="line.name" />
                                             </td>
                                             <td class="text-right">
-                                                <span t-field="line.product_uom_qty" />
+                                                <span
+                                                    t-if="line.product_uom_qty != int(line.product_uom_qty)"
+                                                    t-field="line.product_uom_qty"
+                                                />
+                                                <span
+                                                    t-else=""
+                                                    t-esc="int(line.product_uom_qty)"
+                                                />
                                                 <span
                                                     t-field="line.product_uom"
                                                     groups="uom.group_uom"
@@ -377,7 +397,7 @@
                                 </tr>
                                 <tr>
                                     <td class="text-right" colspan="4">
-                                        <strong>Net Amount</strong>
+                                        <strong>Total</strong>
                                     </td>
                                     <td class="text-right">
                                         <t t-if="subtotal_non_vat">
@@ -402,9 +422,41 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="text-right" colspan="4">
+                                        <strong>WHT</strong>
+                                    </td>
+                                    <td class="text-right" />
+                                    <td class="text-right" />
+                                    <td class="text-right">
+                                        <t
+                                            t-set="amount_wt"
+                                            t-value="sum(doc.order_line.filtered('product_id.wt_tax_id').mapped(lambda l: l.product_id.wt_tax_id.amount / 100 * (l.product_uom_qty * l.price_unit)))"
+                                        />
+                                        <t t-if="amount_wt">
+                                            (<strong
+                                                t-esc="'{:,.2f}'.format(amount_wt)"
+                                            />)
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right" colspan="4">
+                                        <strong>Net Amount</strong>
+                                    </td>
+                                    <td class="text-right" />
+                                    <td class="text-right" />
+                                    <td class="text-right">
+                                        <t t-if="doc.amount_total">
+                                            <strong
+                                                t-esc="'{:,.2f}'.format(doc.amount_total - amount_wt)"
+                                            />
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="text-right" colspan="7">
                                         <strong
-                                            t-esc="'(%s)' % doc.currency_id.amount_to_text(doc.amount_total)"
+                                            t-esc="'(%s)' % doc.currency_id.amount_to_text(doc.amount_total - amount_wt)"
                                         />
                                     </td>
                                 </tr>
@@ -494,12 +546,7 @@
         <div class="footer faf_quotation">
             <div class="row">
                 <div class="col-6">
-                    <span t-field="company.name" />
-                </div>
-                <div class="col-6" />
-            </div>
-            <div class="row">
-                <div class="col-6">
+                    <span t-field="company.name" /><br />
                     <span t-field="company.partner_id.street" />
                     <span t-field="company.partner_id.street2" />
                     <span t-field="company.partner_id.city" />

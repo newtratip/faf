@@ -35,6 +35,11 @@ This module collects FAF Form following
 Changelog
 =========
 
+14.0.1.0.0 (2021-01-27)
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Add WHT on Quotation Form
+
 14.0.1.0.0 (2021-01-25)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
