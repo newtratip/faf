@@ -23,55 +23,91 @@
             <div style="page-break-inside: avoid;">
                 <div class="row">
                     <div
-                        class="col-3 detail white-border no-left-border no-right-border no-bottom-border"
+                        class="col-7 detail white-border no-left-border no-bottom-border"
                     />
-                    <div class="col-9">
-                        <div class="row">
-                            <div
-                                class="col-6 detail white-border no-left-border no-bottom-border"
-                            />
-                            <div class="col-6 detail white-border no-right-border">
-                                No.: <span t-field="doc.name" />
-                            </div>
-                        </div>
+                    <div class="col-2 text-right detail white-border">
+                        No.:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span t-field="doc.name" />
                     </div>
                 </div>
                 <div class="row">
                     <div
-                        class="col-3 detail white-border no-left-border no-right-border no-top-border"
+                        class="col-7 detail white-border no-left-border no-top-border"
                     />
-                    <div class="col-9">
-                        <div class="row">
-                            <div
-                                class="col-6 detail white-border no-left-border no-top-border"
-                            />
-                            <div class="col-6 detail white-border no-right-border">
-                                Date: <span t-field="doc.invoice_date" />
-                            </div>
-                        </div>
+                    <div class="col-2 text-right detail white-border">
+                        Date:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span t-field="doc.invoice_date" />
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3 text-right detail white-border no-left-border">
+                    <div
+                        class="col-7 detail white-border no-left-border no-bottom-border"
+                    />
+                    <div class="col-2 text-right detail white-border">
+                        Due Date:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span t-field="doc.invoice_date_due" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div
+                        class="col-7 detail white-border no-left-border no-top-border no-bottom-border"
+                    />
+                    <div class="col-2 text-right detail white-border">
+                        Sale Order No.:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span
+                            t-esc="', '.join(doc.invoice_line_ids.sale_line_ids.order_id.mapped('name'))"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div
+                        class="col-7 detail white-border no-left-border no-top-border"
+                    />
+                    <div class="col-2 text-right detail white-border">
+                        Sale Consultant:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span t-field="doc.salesperson_id.name" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 text-right detail white-border no-left-border">
                         Customer:
                     </div>
-                    <div class="col-9">
-                        <div class="row">
-                            <div class="col-6 detail white-border">
-                                <span t-field="doc.partner_id.name" /><br />
-                                <span t-field="doc.partner_id.street" />
-                                <span t-field="doc.partner_id.street2" />
-                                <span t-field="doc.partner_id.city" />
-                                <span t-field="doc.partner_id.state_id.name" />
-                                <span t-field="doc.partner_id.zip" />
-                                <span t-field="doc.partner_id.country_id.name" />
-                            </div>
-                            <div class="col-6 detail white-border no-right-border">
-                                Tel: <span t-field="doc.partner_id.phone" /><br />
-                                Email: <span t-field="doc.partner_id.email" />
-                            </div>
-                        </div>
+                    <div class="col-5 detail white-border">
+                        <span t-field="doc.partner_id.name" /><br />
+                        <span t-field="doc.partner_id.street" />
+                        <span t-field="doc.partner_id.street2" />
+                        <span t-field="doc.partner_id.city" />
+                        <span t-field="doc.partner_id.state_id.name" />
+                        <span t-field="doc.partner_id.zip" />
+                        <span t-field="doc.partner_id.country_id.name" />
                     </div>
+                    <div class="col-2 detail white-border text-right">
+                        Tel:<br />Email:
+                    </div>
+                    <div class="col-3 detail white-border no-right-border">
+                        <span t-field="doc.partner_id.phone" /><br />
+                        <span t-field="doc.partner_id.email" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 text-right detail white-border no-left-border">
+                        Tax ID:
+                    </div>
+                    <div class="col-5 detail white-border">
+                        <span t-field="doc.partner_id.vat" />
+                    </div>
+                    <div class="col-2 detail white-border" />
+                    <div class="col-3 detail white-border no-right-border" />
                 </div>
             </div>
             <!-- Invoice Lines -->
@@ -346,7 +382,7 @@
                     </div>
                 </div>
             </div>
-            <div style="page-break-inside: avoid;margin-top: 30px;">
+            <div style="page-break-inside: avoid;margin-top: 70px;">
                 <div class="row">
                     <!-- Payment Detail -->
                     <div class="col-6">
