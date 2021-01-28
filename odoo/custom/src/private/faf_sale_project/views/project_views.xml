@@ -1,0 +1,29 @@
+<odoo>
+    <!--Copyright 2021 Ecosoft Co., Ltd (http://ecosoft.co.th)-->
+    <record id="view_project" model="ir.ui.view">
+        <field name="name">project.project.tree</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+                <field name="date_sale_order" />
+                <field name="description" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_project_project_filter" model="ir.ui.view">
+        <field name="name">project.project.select</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter" />
+        <field name="arch" type="xml">
+            <filter name="Partner" position="after">
+                <filter
+                    string="Sale Order Date/Project Date"
+                    name="date_sale_order"
+                    context="{'group_by': 'date_sale_order'}"
+                />
+            </filter>
+        </field>
+    </record>
+</odoo>
