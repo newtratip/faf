@@ -3,6 +3,7 @@
     font-family: "Calibril";
     src: url("../fonts/calibril.ttf") format("truetype");
 }
+
 // Quotation Form
 .faf_quotation {
     font-family: Calibril;
@@ -40,6 +41,44 @@
 
 // Invoice Form
 .faf_invoice {
+    font-family: Calibril;
+    font-size: 11pt;
+    .logo {
+        max-height: 70px;
+    }
+    .title {
+        background-color: #ff6600;
+        color: #ffffff;
+        font-size: 12pt;
+    }
+    .detail {
+        background-color: #e7e6e6;
+    }
+    .no-left-border {
+        border-left: 0px !important;
+    }
+    .no-right-border {
+        border-right: 0px !important;
+    }
+    .no-bottom-border {
+        border-bottom: 0px !important;
+    }
+    .no-top-border {
+        border-top: 0px !important;
+    }
+    .white-border {
+        border: 1px solid #ffffff;
+    }
+    thead th {
+        background-color: #ff964f;
+        border: 1px solid #ffffff;
+        vertical-align: middle;
+        color: #ffffff;
+    }
+}
+
+// Receipt Form
+.faf_receipt {
     font-family: Calibril;
     font-size: 11pt;
     .logo {
