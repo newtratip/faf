@@ -83,3 +83,13 @@
   merges:
     - oca $ODOO_VERSION
     - oca refs/pull/777/head # project_deadline
+
+./account-invoicing:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    oca: https://github.com/OCA/account-invoicing.git
+  target: oca $ODOO_VERSION
+  merges:
+    - oca $ODOO_VERSION
+    - oca refs/pull/853/head # account_move_tier_validation
