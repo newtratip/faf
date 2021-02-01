@@ -12,8 +12,9 @@
     "depends": [
         # Odoo Modules
         "sale_management",
-        # "account_accountant",
         "purchase",
+        # Enterprise Modules
+        # "account_accountant",
         # OCA Modules
         "l10n_th_tax_invoice",
         "l10n_th_tax_report",  # Still in PR
@@ -26,10 +27,13 @@
         "project_deadline",
         "sale_order_type",
         # FAF Modules
-        "faf_hr_salesperson",
+        "faf_base",
         "faf_sale",
-        "faf_sale_service_template",
         "faf_forms",
+        "faf_hr_salesperson",
+        "faf_sale_service_template",
+        "faf_sale_order_type",
+        "faf_sale_project",
     ],
     "license": "AGPL-3",
     "installable": True,
