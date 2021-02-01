@@ -8,7 +8,12 @@
     "category": "FAF",
     "website": "http://ecosoft.co.th",
     "author": "Tharathip C., Ecosoft",
-    "depends": ["sale_project", "project_status"],
+    "depends": [
+        "sale_project",
+        "project_status",
+        "sale_order_type",
+        "faf_sale",
+    ],
     "data": [
         "views/project_views.xml",
         "views/sale_views.xml",

@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_quotation_tree" />
         <field name="arch" type="xml">
             <field name="company_id" position="after">
-                <field name="project_description" />
+                <field name="subject" string="Project Description" />
                 <field name="project_status" />
             </field>
         </field>
@@ -18,7 +18,7 @@
         <field name="inherit_id" ref="sale.view_order_tree" />
         <field name="arch" type="xml">
             <field name="company_id" position="after">
-                <field name="project_description" />
+                <field name="subject" string="Project Description" />
                 <field name="project_status" />
             </field>
         </field>
