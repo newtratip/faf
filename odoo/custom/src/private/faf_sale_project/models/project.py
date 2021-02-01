@@ -19,5 +19,6 @@ class ProjectProject(models.Model):
     )
     sale_order_subject = fields.Char(
         related="sale_order_id.subject",
+        string="Project Description",
         store=True,
     )
