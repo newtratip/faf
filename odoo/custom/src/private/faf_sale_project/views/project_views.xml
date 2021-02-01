@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <field name="user_id" position="after">
                 <field name="date_sale_order" />
-                <field name="description" />
+                <field name="sale_order_subject" />
             </field>
         </field>
     </record>
@@ -22,6 +22,11 @@
                     string="Sale Order Date/Project Date"
                     name="date_sale_order"
                     context="{'group_by': 'date_sale_order'}"
+                />
+                <filter
+                    string="Sale Order Type"
+                    name="sale_order_type"
+                    context="{'group_by': 'sale_order_type_id'}"
                 />
             </filter>
         </field>

@@ -12,3 +12,12 @@ class ProjectProject(models.Model):
         string="Sale Order Date/Project Date",
         store=True,
     )
+    sale_order_type_id = fields.Many2one(
+        comodel_name="sale.order.type",
+        related="sale_order_id.type_id",
+        store=True,
+    )
+    sale_order_subject = fields.Char(
+        related="sale_order_id.subject",
+        store=True,
+    )
