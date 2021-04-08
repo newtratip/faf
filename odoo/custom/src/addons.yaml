@@ -18,8 +18,6 @@ l10n-thailand:
   - l10n_th_amount_to_text
 purchase-workflow:
   - purchase_tier_validation # Task T1253
-sale-workflow:
-  - sale_order_type # https://github.com/OCA/sale-workflow/pull/1425
 project:
   - project_list
   - project_status
